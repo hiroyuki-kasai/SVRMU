@@ -150,7 +150,7 @@ display_graph('time','cost', {'SMU', 'SVRMU'}, {w_smu_nmf, w_svrmu_nmf}, {infos_
 That's it!
 
 
-<img src="https://dl.dropboxusercontent.com/u/869853/github/NMFLibrary/images/cost.png" width="600">
+<img src="http://www.kasailab.com/Public/Github/SVRMU/images/SVRMU_Syn1.png" width="900">
 
 <br />
 
