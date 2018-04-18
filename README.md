@@ -157,20 +157,45 @@ That's it!
 More plots
 ----------------------------
 
-"**demo_face.m**" illustrates the learned basis (dictrionary) in case of [CBCL face datasets](http://cbcl.mit.edu/software-datasets/FaceData2.html).
+** Demonstation using face datasets
+
+"**./test/demo_face_online.m**" illustrates the learned basis (dictrionary) in case of [CBCL face datasets](http://cbcl.mit.edu/software-datasets/FaceData2.html).
 
 The dataset is first loaded into V instead of generating synthetic data in **Step 1**.
 
 ```Matlab
-V = importdata('./data/CBCL_face.mat');
+V = importdata('../data/CBCL_Face.mat');
+V = V(:,1:N);
+V = normalization(V, 50);    
 ```
 
 Then, we can display basis elements (W: dictionary) obtained with different algorithms additionally in **Step 4**.
 
 ```Matlab
-plot_dictionnary(w_nmf_mu.W, [], [7 7]); 
-plot_dictionnary(w_nmf_hals.W, [], [7 7]); 
+plot_dictionnary(w_smu_nmf.W, [], [7 7]); 
+plot_dictionnary(w_svrmu_nmf.W, [], [7 7]); 
 ```
+
+** Demonstation of robust variant
+
+"**./test/demo_face_with_outlier_online.m**" illustrates the learned basis (dictrionary) of face datasets with outlier contamination.
+
+After loading the dataset, outlier is added in **Step 1**.
+
+```Matlab
+% set outlier level
+outlier_rho = 0.2; 
+% add outliers 
+[V, ~] = add_outlier(outlier_rho, F, N, V);  
+```
+
+Then, you can call the robust mode by setting `options.robust` in **Step 3**.
+
+```Matlab
+options.robust = true;
+[w_svrmu_nmf, infos_svrmu_nmf] = svrmu_nmf(V, K, options);     
+```
+
 
 <img src="http://www.kasailab.com/Public/Github/SVRMU/images/SVRMU_CBCL_BaseRep.png" width="900">
 
