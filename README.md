@@ -1,4 +1,4 @@
-# SVRMU
+# SVRMU (Stochastic variance reduced multiplicative updates)
 MATLAB code for stochastic variance reduced multiplicative updates (SVRMU). The source code is included in [NMFLibrary](https://github.com/hiroyuki-kasai/NMFLibrary).
 
 Authors: [Hiroyuki Kasai](http://www.kasailab.com/)
