@@ -172,7 +172,9 @@ plot_dictionnary(w_nmf_mu.W, [], [7 7]);
 plot_dictionnary(w_nmf_hals.W, [], [7 7]); 
 ```
 
-<img src="https://dl.dropboxusercontent.com/u/869853/github/NMFLibrary/images/face_dictionary.png" width="600">
+<img src="http://www.kasailab.com/Public/Github/SVRMU/images/SVRMU_CBCL_BaseRep.png" width="900">
+
+<img src="http://www.kasailab.com/Public/Github/SVRMU/images/SVRMU_Syn2.png" width="900">
 
 
 <br />
