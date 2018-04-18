@@ -157,7 +157,7 @@ That's it!
 More plots
 ----------------------------
 
-** Demonstation using face datasets
+- **Demonstation using face datasets**
 
 "**./test/demo_face_online.m**" illustrates the learned basis (dictrionary) in case of [CBCL face datasets](http://cbcl.mit.edu/software-datasets/FaceData2.html).
 
@@ -176,9 +176,9 @@ plot_dictionnary(w_smu_nmf.W, [], [7 7]);
 plot_dictionnary(w_svrmu_nmf.W, [], [7 7]); 
 ```
 
-** Demonstation of robust variant
+- **Demonstation of robust variant**
 
-"**./test/demo_face_with_outlier_online.m**" illustrates the learned basis (dictrionary) of face datasets with outlier contamination.
+"**./test/demo_face_with_outlier_online.m**" illustrates the learned basis of face datasets with outlier.
 
 After loading the dataset, outlier is added in **Step 1**.
 
@@ -189,13 +189,15 @@ outlier_rho = 0.2;
 [V, ~] = add_outlier(outlier_rho, F, N, V);  
 ```
 
-Then, you can call the robust mode by setting `options.robust` in **Step 3**.
+Then, you can call the robust mode by setting `options.robust=true` in **Step 3**.
 
 ```Matlab
 options.robust = true;
 [w_svrmu_nmf, infos_svrmu_nmf] = svrmu_nmf(V, K, options);     
 ```
 
+<br />
+<br />
 
 <img src="http://www.kasailab.com/Public/Github/SVRMU/images/SVRMU_CBCL_BaseRep.png" width="900">
 
