@@ -14,10 +14,10 @@ Latest code version: 1.0.0 (see Release notes for more info)
 Introduction
 ----------
 
-[Nonnegative matrix factorization (NMF)](https://en.wikipedia.org/wiki/Non-negative_matrix_factorization), a dimensionality reduction and factor analysis method, is a special case in which factor matrices have low-rank nonnegative constraints. 
-Considering the stochastic learning in NMF, we specifically address the multiplicative update (MU) rule, which is the most popular, but which has slow convergence property. 
-This code provides a solver of the stochastic MU rule with a variance-reduced (VR) technique of stochastic gradient, called SVRMU. 
-Numerical comparisons suggest that SVRMU robustly outperform state-of-the-art algorithms across different synthetic and real-world datasets.
+[Nonnegative matrix factorization (NMF)](https://en.wikipedia.org/wiki/Non-negative_matrix_factorization), a [matrix decomposition](https://en.wikipedia.org/wiki/Matrix_decomposition), a [dimensionality reduction](https://en.wikipedia.org/wiki/Dimensionality_reduction) and factor analysis method, is a special case in which factor matrices have low-rank nonnegative constraints. 
+Considering the stochastic learning in NMF, we specifically address the [multiplicative update (MU)](https://papers.nips.cc/paper/1861-algorithms-for-non-negative-matrix-factorization.pdf) rule, which is the most popular, but which has slow convergence property. 
+This code provides a solver of the stochastic MU rule with a variance-reduced (VR) technique of [stochastic gradient](https://en.wikipedia.org/wiki/Stochastic_gradient_descent), called SVRMU. 
+Numerical comparisons suggest that SVRMU robustly outperforms state-of-the-art algorithms across different synthetic and real-world datasets.
 
 <br />
 
@@ -61,7 +61,7 @@ smu_nmf.m               - SMU algorithm file.
 
 First to do
 ----------------------------
-Get [NMFLibrary](https://github.com/hiroyuki-kasai/NMFLibrary). Then, follow below.
+Obtain [NMFLibrary](https://github.com/hiroyuki-kasai/NMFLibrary) package. Then, follow below.
 ```Matlab
 %% First run the setup script
 run_me_first; 
@@ -72,14 +72,14 @@ run_me_first;
 Simplest usage example: 4 steps!
 ----------------------------
 
-Just execute `test_nmf_online` for the simplest demonstration of this package. .
+Just execute `test_nmf_online` for a simplest demonstration of the SVRMU algorithm.
 
 ```Matlab
 %% Execute the demonstration script
 demo; 
 ```
 
-The "**demo.m**" file contains below.
+"**test_nmf_online.m**" file contains below.
 ```Matlab
 %% generate synthetic data non-negative matrix V size of (FxN)
 F = 300;
@@ -159,14 +159,14 @@ More plots
 
 - **Demonstation using face datasets**
 
-"**./test/demo_face_online.m**" illustrates the learned basis (dictrionary) in case of [CBCL face datasets](http://cbcl.mit.edu/software-datasets/FaceData2.html).
+"**demo_face_online.m**" in the **test** folder illustrates the learned basis (dictrionary). THis demo uses [CBCL face datasets](http://cbcl.mit.edu/software-datasets/FaceData2.html) datasets.
 
 The dataset is first loaded into V instead of generating synthetic data in **Step 1**.
 
 ```Matlab
 V = importdata('../data/CBCL_Face.mat');
-V = V(:,1:N);
-V = normalization(V, 50);    
+V = V(:,1:N); % get partial matrix
+V = normalization(V, 50); % set max_level=50
 ```
 
 Then, we can display basis elements (W: dictionary) obtained with different algorithms additionally in **Step 4**.
@@ -178,7 +178,7 @@ plot_dictionnary(w_svrmu_nmf.W, [], [7 7]);
 
 - **Demonstation of robust variant**
 
-"**./test/demo_face_with_outlier_online.m**" illustrates the learned basis of face datasets with outlier.
+"**demo_face_with_outlier_online.m**" in the **test** folder  illustrates the learned basis of face datasets with outlier.
 
 After loading the dataset, outlier is added in **Step 1**.
 
