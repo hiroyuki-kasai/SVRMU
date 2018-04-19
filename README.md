@@ -53,7 +53,7 @@ Numerical comparisons suggest that SVRMU robustly outperforms state-of-the-art a
 Files
 ---------
 <pre>
-./                                      - Top directory of [NMFLibrary](https://github.com/hiroyuki-kasai/NMFLibrary).
+./                                      - Top directory of NMFLibrary.
 ./test_nmf_online.m                     - Demo file for SMU and SVRMU algorithms. 
 ./solver/online/svrmu_nmf.m             - SVRMU algorithm file.
 ./solver/online/smu_nmf.m               - SMU algorithm file.
