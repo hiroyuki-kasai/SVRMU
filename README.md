@@ -53,8 +53,13 @@ Numerical comparisons suggest that SVRMU robustly outperforms state-of-the-art a
 Files
 ---------
 <pre>
-svrmu_nmf.m             - SVRMU algorithm file.
-smu_nmf.m               - SMU algorithm file.
+./                                      - Top directory of NMFLibrary.
+./test_nmf_online.m                     - Demo file for SMU and SVRMU algorithms. 
+./solver/online/svrmu_nmf.m             - SVRMU algorithm file.
+./solver/online/smu_nmf.m               - SMU algorithm file.
+./test/comp_nmf_online_algorithms       - Comparison file for solvers.
+./test/demo_face_online.m               - Demo file for face datasets.
+./test/demo_face_with_outlier_online.m  - Demo file for face datasets with outlier.
 </pre>
 
 <br />                              
@@ -159,7 +164,7 @@ More plots
 
 - **Demonstation using face datasets**
 
-"**demo_face_online.m**" in the **test** folder illustrates the learned basis (dictrionary). THis demo uses [CBCL face datasets](http://cbcl.mit.edu/software-datasets/FaceData2.html) datasets.
+"**demo_face_online.m**" in the "**test**" folder illustrates the learned basis (dictrionary). THis demo uses [CBCL face datasets](http://cbcl.mit.edu/software-datasets/FaceData2.html) datasets.
 
 The dataset is first loaded into V instead of generating synthetic data in **Step 1**.
 
@@ -178,7 +183,7 @@ plot_dictionnary(w_svrmu_nmf.W, [], [7 7]);
 
 - **Demonstation of robust variant**
 
-"**demo_face_with_outlier_online.m**" in the **test** folder  illustrates the learned basis of face datasets with outlier.
+"**demo_face_with_outlier_online.m**" in the "**test**" folder  illustrates the learned basis of face datasets with outlier.
 
 After loading the dataset, outlier is added in **Step 1**.
 
