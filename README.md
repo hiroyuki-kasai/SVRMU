@@ -50,7 +50,7 @@ Numerical comparisons suggest that SVRMU robustly outperforms state-of-the-art a
 
 <br />
 
-Files
+Files and folders
 ---------
 <pre>
 ./                                      - Top directory of NMFLibrary.
@@ -204,9 +204,9 @@ options.robust = true;
 <br />
 <br />
 
-<img src="http://www.kasailab.com/Public/Github/SVRMU/images/SVRMU_CBCL_BaseRep.png" width="900">
+<img src="http://www.kasailab.com/public/github/SVRMU/images/SVRMU_CBCL_BaseRep.png" width="900">
 
-<img src="http://www.kasailab.com/Public/Github/SVRMU/images/SVRMU_Syn2.png" width="900">
+<img src="http://www.kasailab.com/public/github/SVRMU/images/SVRMU_Syn2.png" width="900">
 
 
 <br />
